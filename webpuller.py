@@ -27,7 +27,7 @@ if __name__ == '__main__':
     for link in soup.find_all('a'):
         fileName = link.get('href')
         fixedName = urllib.parse.unquote_plus(fileName)
-        if (fileName == '../'):
+        if (fileName == '../' or fileName == url):
             continue
         req = Request(url + fileName, headers=headers)
 
