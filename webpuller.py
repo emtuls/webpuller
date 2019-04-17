@@ -42,6 +42,6 @@ if __name__ == '__main__':
 			
         req = Request(url + fileName, headers=headers)
         
-        if not (outDir + fixedName).endswith('/'):
+        if not (outDir + fixedName).endswith('/'):          # eventually, support toggling of entering directories and pulling files from them as well...
             with urllib.request.urlopen(req) as response, open(outDir + fixedName, 'wb') as out_file:
                 shutil.copyfileobj(response, out_file)
